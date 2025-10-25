@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.9-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-Interactive_App-red)
+![Jupyter](https://img.shields.io/badge/Jupyter-Maths_Explanation-orange)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
 📘 **Mathematical Explanation Notebook**
 
 View the full step-by-step neural network maths in:
@@ -67,3 +72,4 @@ this project shows the full journey from equations ➜ implementation ➜ visual
 👩‍💻 **Author:** Maha Laeeq  
 🎓 Bachelor of Computer Science — RMIT University  
 📍 Melbourne, Australia  
+
