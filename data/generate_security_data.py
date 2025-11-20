@@ -3,25 +3,20 @@ import numpy as np
 
 np.random.seed(42)
 
-def generate_security_data(n=500):
-    packet_size = np.random.randint(40, 1500, n)
-    connection_rate = np.random.randint(1, 200, n)
-    login_attempts = np.random.randint(0, 20, n)
+rows = 500
 
-    attack = (
-        (packet_size > 1000 & (login_attempts > 10)) |
-        (connection_rate > 150)
-    ).astype(int)
+packet_size = np.random.randint(40, 2000, rows)
+connection_rate = np.random.randint(1, 200, rows)
+login_attempts = np.random.randint(0, 20, rows)
 
-    df = pd.DataFrame({
-        "packet_size": packet_size,
-        "connection_rate": connection_rate,
-        "login_attempts": login_attempts,
-        "attack": attack
-    })
+attack = ((packet_size > 1200) & (login_attempts > 5) | (connection_rate > 120)).astype(int)
 
-    df.to_csv("data/security_dataset.csv", index=False)
-    print("✅ security_dataset.csv generated")
+df = pd.DataFrame({
+    "packet_size": packet_size,
+    "connection_rate": connection_rate,
+    "login_attempts": login_attempts,
+    "attack": attack
+})
 
-if __name__ == "__main__":
-    generate_security_data()
+df.to_csv("data/security_dataset.csv", index=False)
+print("✅ security_dataset.csv generated")

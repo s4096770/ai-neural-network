@@ -3,6 +3,7 @@ from .layers import DenseLayer
 from .activations import get_activation
 from .losses import MSE
 
+
 class NeuralNet:
     def __init__(self, layers, activation="relu", lr=0.01, init="xavier"):
         self.lr = lr
@@ -10,6 +11,7 @@ class NeuralNet:
         self.activation = get_activation(activation)
         self.init = init
         self.layers = []
+        self.loss_history = []
 
         for i in range(len(layers) - 1):
             self.layers.append(
@@ -33,10 +35,14 @@ class NeuralNet:
             da = layer.backward(da, self.lr)
 
     def train(self, X, y, epochs=2000):
+        self.loss_history = []
+
         for epoch in range(epochs):
             y_pred = self.forward(X)
             loss = MSE.forward(y, y_pred)
             loss_grad = MSE.derivative(y, y_pred)
+
+            self.loss_history.append(loss)
             self.backward(loss_grad)
 
             if epoch % 200 == 0:
