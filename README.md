@@ -8,7 +8,7 @@
 View the full step-by-step neural network maths in:
 [neural_network_math.ipynb](neural_network_math.ipynb)
 
-Or check out my website: https://s4096770-ai-neural-network-app-v9sprf.streamlit.app/ 
+Or check out my website: https://ai-neural-network-sf4ouvw9s9x5tjrwauzgex.streamlit.app/
 
 ---------
 
